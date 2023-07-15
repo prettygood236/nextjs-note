@@ -21,7 +21,8 @@ export default function RootLayout({
   );
 }
 
-/*  app 라우팅을 도입하게 된 이유
+/*
+//. The reasons for adopting app routing
 Header, Footer, Navbar같은 layout을 제외한 나머지 부분만 
 렌더하고 싶은데 page기반 라우팅에선 그게 문제가 있더라. 
 */
