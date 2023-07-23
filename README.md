@@ -39,3 +39,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 "start": "next start", // 서버에 배포한 뒤 빌드 후 실행할 때
 "lint": "next lint" // 프로젝트 소스코드를 검사할 때
 },
+
+v12 : '페이지' 단위로 렌더링 방식을 규정
+v13 : '컴포넌트' 단위로 렌더링 방식을 규정!
