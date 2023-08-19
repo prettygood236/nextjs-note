@@ -1,3 +1,4 @@
+import { getProduct, getProducts } from '@/service/product';
 import { notFound } from 'next/navigation';
 
 type Props = {
@@ -13,19 +14,23 @@ export const generateMetadata = ({ params }: Props) => {
   };
 };
 
-export default function ProductsPage({ params }: Props) {
+export default function ProductsPage({ params: { slug } }: Props) {
+  const product = getProduct(slug);
   //. If notFound for individual routing page is not called as below, the global notFound from the root will be rendered.
-  if (params.slug === 'nothing') {
+  // if (slug === 'nothing') {
+  //   notFound();
+  // }
+  if (!product) {
     notFound();
   }
-  return <div>{params.slug}</div>;
+  return <div>{product}</div>;
 }
 
 //. Dynamic Routing pages are rendered using SSR method.
 //. If we want to pre-generate pages (SSG), use the generateStaticParams function!
-export function generateStaticParams() {
-  const products = ['shirts', 'shoes'];
+export async function generateStaticParams() {
+  const products = await getProducts();
   return products.map((product) => ({
-    slug: product,
+    slug: product.id,
   }));
 }
