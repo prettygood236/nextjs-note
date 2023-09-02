@@ -10,12 +10,15 @@ type Props = {
 //. Dynamic metadata! WoW!
 export const generateMetadata = ({ params }: Props) => {
   return {
-    title: `제품의 이름 : ${params.slug}`,
+    title: `제품의 이름 : ${params}`,
   };
 };
 
-export default function ProductsPage({ params: { slug } }: Props) {
-  const product = getProduct(slug);
+//. ISR (time-based revalidation)
+export const revalidate = 3;
+
+export default async function ProductPage({ params: { slug } }: Props) {
+  const product = await getProduct(slug);
   //. If notFound for individual routing page is not called as below, the global notFound from the root will be rendered.
   // if (slug === 'nothing') {
   //   notFound();
@@ -23,7 +26,8 @@ export default function ProductsPage({ params: { slug } }: Props) {
   if (!product) {
     notFound();
   }
-  return <div>{product}</div>;
+
+  return <div>{product.name}</div>;
 }
 
 //. Dynamic Routing pages are rendered using SSR method.

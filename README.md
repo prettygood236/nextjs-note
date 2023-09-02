@@ -34,11 +34,11 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 "scripts": {
-"dev": "next dev", // 개발할 때 (SSG페이지도 SSR로 렌더링)
-"build": "next build", // 서버에 배포한 뒤 프로젝트를 빌드할 때
-"start": "next start", // 서버에 배포한 뒤 빌드 후 실행할 때
-"lint": "next lint" // 프로젝트 소스코드를 검사할 때
+"dev": "next dev", // used during development (\* even SSG pages are rendered as SSR)
+"build": "next build", // used when building the project after deploying to the server
+"start": "next start", // used when running the project after building on the server
+"lint": "next lint" // used when inspecting the source code of the project
 },
 
-v12 : '페이지' 단위로 렌더링 방식을 규정
-v13 : '컴포넌트' 단위로 렌더링 방식을 규정!
+v12 : defines rendering methods at a 'page' level
+v13 : defines rendering methods at a 'component' level
