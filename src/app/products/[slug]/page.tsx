@@ -1,4 +1,4 @@
-import { getProduct, getProducts } from '@/service/product';
+import { getProduct, getProducts } from '@/src/service/product';
 import { notFound } from 'next/navigation';
 
 type Props = {

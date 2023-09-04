@@ -1,4 +1,4 @@
-import Counter from '@/components/Counter';
+import Counter from '@/src/components/Counter';
 import Image from 'next/image';
 import os from 'os';
 import { useState } from 'react';

@@ -8,7 +8,7 @@ type Product = {
 };
 
 export async function getProducts(): Promise<Product[]> {
-  const filePath = path.join(process.cwd(), 'data', 'products.json');
+  const filePath = path.join(process.cwd(), 'src/data', 'products.json');
   // //* await : Used to execute a function that returns a Promise, and it waits until the Promise is either resolved or rejected.
   const data = await fs.readFile(filePath, 'utf-8');
   return JSON.parse(data);
