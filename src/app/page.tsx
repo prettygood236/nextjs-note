@@ -12,6 +12,13 @@ export default function Home() {
   return (
     <>
       <h1 className='text-blue-500 text-2xl'>홈페이지</h1>
+      {/* //. Using the next.js Image sets the size in advance, so there is no layout shift */}
+      <Image
+        src='https://images.unsplash.com/photo-1441986300917-64674bd600d8'
+        alt='Clothes'
+        width={400}
+        height={400}
+      />
       <Counter />
     </>
   );

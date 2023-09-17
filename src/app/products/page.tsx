@@ -1,11 +1,14 @@
 import MeowArticle from '@/src/components/MeowArticle';
 import { getProducts } from '@/src/service/product';
+import Image from 'next/image';
 import Link from 'next/link';
+import jeansImage from '@/public/images/jeans.jpg';
 
 //. ISR
 // export const revalidate = 3;
 
 export default async function ProductsPage() {
+  // throw new Error();
   const products = await getProducts();
 
   // const data = await (
@@ -23,6 +26,13 @@ export default async function ProductsPage() {
   return (
     <>
       <h1>Products Page</h1>
+      <Image
+        src={jeansImage}
+        alt='Jeans'
+        // width={fill}
+        // height={fill}
+        // fill={true}
+      />
       <ul>
         {products.map(({ id, name }, index) => (
           <li key={index}>
