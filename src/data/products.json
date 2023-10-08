@@ -2,16 +2,24 @@
   {
     "id": "10000",
     "name": "pants",
-    "price": 5000
+    "price": 5000,
+    "image": "pants.jpg"
   },
   {
     "id": "20000",
     "name": "shirt",
-    "price": 7000
+    "price": 7000,
+    "image": "tshirt.jpg"
   },
   {
     "id": "30000",
     "name": "jacket",
     "price": 10000
+  },
+  {
+    "id": "40000",
+    "name": "shoes",
+    "price": 20000,
+    "image": "shoes.jpg"
   }
 ]

@@ -1,10 +1,13 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Nanum_Gothic, Open_Sans } from 'next/font/google';
 import Link from 'next/link';
 import styles from './layout.module.css';
 
+//. Next font : 1. Built-in automatic self-hosting 2. With zero layout shift
 const inter = Inter({ subsets: ['latin'] });
+const sans = Open_Sans({ subsets: ['latin-ext'] });
+const gothic = Nanum_Gothic({ weight: '700', subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Plz buy all things',
@@ -21,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      <body className={gothic.className}>
         <header className={styles.header}>
           <h1>Demo Note</h1>
           <nav className={styles.nav}>

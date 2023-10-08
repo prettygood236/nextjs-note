@@ -18,6 +18,7 @@ export default function Home() {
         alt='Clothes'
         width={400}
         height={400}
+        priority
       />
       <Counter />
     </>

@@ -1,5 +1,7 @@
+import GoProductButton from '@/src/components/GoProductButton';
 import { getProduct, getProducts } from '@/src/service/product';
-import { notFound } from 'next/navigation';
+import Image from 'next/image';
+import { notFound, redirect } from 'next/navigation';
 
 type Props = {
   params: {
@@ -24,10 +26,23 @@ export default async function ProductPage({ params: { slug } }: Props) {
   //   notFound();
   // }
   if (!product) {
+    redirect('/products');
     notFound();
   }
-
-  return <div>{product.name}</div>;
+  return (
+    <div className='flex flex-col'>
+      <div>{product.name}</div>
+      <div>
+        <Image
+          src={`/images/${product.image}`}
+          alt={product.name}
+          width={400}
+          height={400}
+        />
+      </div>
+      <GoProductButton />
+    </div>
+  );
 }
 
 //. Dynamic Routing pages are rendered using SSR method.
